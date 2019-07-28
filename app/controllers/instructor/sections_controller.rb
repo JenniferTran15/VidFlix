@@ -1,6 +1,6 @@
 class Instructor::SectionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_authoirzed_for_current_course
+  before_action :require_authorized_for_current_course
 
   def new
     @section = Section.new
