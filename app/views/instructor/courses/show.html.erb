@@ -4,7 +4,7 @@
   <% puts @course.title %>
    
   <h1><%= @course.title %></h1>
-  <%= image_tag @course.image, class: 'img-fluid' %>
+  <%= image_tag @course.image.to_s, class: 'img-fluid' %>
   <br />
   <div class="row">
     <div class="col-sm-4 col-12">

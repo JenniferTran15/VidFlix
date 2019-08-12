@@ -2,7 +2,7 @@
 
 <div class="booyah-box col-10 offset-1">
   <h1><%= @course.title %></h1>
-  <%= image_tag @course.image, class: 'img-fluid' %>
+  <%= image_tag @course.image.to_s, class: 'img-fluid' %>
   <br />
   <div class="row">
     <div class="col-sm-4 col-12">
@@ -22,6 +22,14 @@
         <h3 class="badge badge-info">You Are Enrolled!</h3>
       <% else %>
         <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+        <%= form_tag course_enrollments_path(@course) do %>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount="500"
+                  data-locale="auto"></script>
+        <% end %>
       <% end %>
     </div>
 
