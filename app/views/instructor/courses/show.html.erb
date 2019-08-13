@@ -28,7 +28,7 @@
     <% @course.sections.each do |section| %>
       <div class="section">
         <%= section.title %>
-        <% section.lessons.each do |lesson| %>
+        <% section.lessons.rank(:row_order).each do |lesson| %>
           <div class="lesson">
               <%= link_to lesson_path(lesson) do %>
               <b><%= lesson.title %></b>
@@ -41,38 +41,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-<!-- <br />
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%= current_course.title %></h1>
-  <br />
-  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
-  <br class="clr" />
-
-  <div class="text-center">
-    <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
-  </div>
-
-  <ul>
-    <% current_course.sections.each do |section| %>
-      <li>
-        <%= section.title %>
-        <%= link_to 'New Lesson', new_instructor_course_section_path(section), class: 'float-right btn btn-primary btn-sm' %>
-        <ul>
-          <% section.lessons.each do |lesson| %>
-            <li>
-              <b><%= lesson.title %></b>
-              -
-              <%= lesson.subtitle %>
-            </li>
-          <% end %>
-        </ul>
-        <br class="clr" />
-      </li>
-    <% end %>
-  </ul>
-
-</div> -->

@@ -72,6 +72,7 @@ gem 'mini_magick'
 gem "fog-aws"
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'ranked-model'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
