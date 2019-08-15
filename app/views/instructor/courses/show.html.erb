@@ -1,43 +1,49 @@
+<script>
+  $(function() {
+    $('.lessons').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { lesson: { row_order_position: ui.item.index() } }
+        });
+      }
+    });
+   });
+</script>
+
 <br />
 
+<br />
 <div class="booyah-box col-10 offset-1">
-  <% puts @course.title %>
-   
-  <h1><%= @course.title %></h1>
+  <h1 class="text-center"><%= current_course.title %></h1>
   <%= image_tag @course.image.to_s, class: 'img-fluid' %>
   <br />
-  <div class="row">
-    <div class="col-sm-4 col-12">
-      <span class="badge badge-default">
-        <%= number_to_currency @course.cost %>
-      </span>
+  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
+  <br class="clr" />
 
-      <% if current_user && current_user == @course.user %>
-        <br />
-        <br />
-        <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-danger btn-large' %>
-      <% end %>
-    </div>
-
-    <div class="col-sm-8 col-12">
-      <%= @course.description %>
-    </div>
+  <div class="text-center">
+    <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
   </div>
 
-  <div class="col-12">
-    <% @course.sections.each do |section| %>
-      <div class="section">
+  <ul>
+    <% current_course.sections.each do |section| %>
+      <li>
         <%= section.title %>
-        <% section.lessons.rank(:row_order).each do |lesson| %>
-          <div class="lesson">
-              <%= link_to lesson_path(lesson) do %>
+        <%= link_to 'New Lesson', new_instuctor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
+        <ul class="lessons">
+          <% section.lessons.rank(:row_order).each do |lesson| %>
+            <li data-update-url="<%= isntructor_lesson_path(lesson) %>">
               <b><%= lesson.title %></b>
               -
               <%= lesson.subtitle %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
+            </li>
+          <% end %>
+        </ul>
+        <br class="clr" />
+      </li>
     <% end %>
-  </div>
+  </ul>
+
 </div>

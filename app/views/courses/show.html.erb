@@ -2,7 +2,7 @@
 
 <div class="booyah-box col-10 offset-1">
   <h1><%= @course.title %></h1>
-  <%= image_tag @course.image.to_s, class: 'img-fluid' %>
+  <%= image_tag @course.image.to_s, class: 'img-fluid' %> 
   <br />
   <div class="row">
     <div class="col-sm-4 col-12">
@@ -18,8 +18,9 @@
 
       <br />
       <br />
+
       <% if current_user %>
-        <% if current_user && current_user.enrolled_in?(@course) %>
+        <% if current_user.enrolled_in?(@course) %>
           <h3 class="badge badge-info">You Are Enrolled!</h3>
         <% else %>
           <% if @course.free? %>
@@ -34,11 +35,11 @@
                       data-amount="<%= (@course.cost * 100).to_i %>"
                       data-locale="auto"></script>
             <% end %>
+          <% end %>
         <% end %>
+      <% else %>
+        <h3 class="badge badge-info">Sign In to Enroll!</h3>
       <% end %>
-    <% else %>
-      <h3 class="badge badge-info">Sign In to Enroll!</h3>
-    <% end %>
     </div>
 
     <div class="col-sm-8 col-12">
@@ -48,14 +49,14 @@
 
   <div class="col-12">
     <% @course.sections.each do |section| %>
-    <br /><br />
+      <br /><br />
       <div class="section">
         <h3>
           <%= section.title %>
         </h3>
         <div class="row">
           <% section.lessons.rank(:row_order).each do |lesson| %>
-            <div class="col-12 col-sm-6"
+            <div class="col-12 col-sm-6">
               <div class="lesson text-center">
                 <br />
                 <%= link_to lesson_path(lesson) do %>
