@@ -12,9 +12,9 @@ class LessonsController < ApplicationController
     @current_lesson ||= Lesson.find(params[:id])
   end
 
-  helper_method :require_authorized_for_current_course
+  helper_method :current_course
   def current_course
-    current_lesson.section.current_course
+    current_lesson.section.course
   end
 
   def require_authorized_for_current_course
