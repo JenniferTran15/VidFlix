@@ -16,4 +16,5 @@ class Course < ApplicationRecord
   def premium?
     ! free?
   end
+
 end

@@ -1,5 +1,5 @@
 <script>
-  $(function() {
+  jQuery(function($) {
     $('.new-lesson-button').click(function() {
       var lessonUrl = $( event.target).data('lesson-url');
       $('#newLessonForm').attr('action', lessonUrl);
@@ -15,8 +15,6 @@
         });
       }
     });
-   });
-
 
     $('.sections').sortable({
       update: function(event, ui){
@@ -37,8 +35,8 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= current_course.title %></h1>
 
-  <% if current_course.image.url %>
-    <%= image_tag @course.image.url, class: 'img-fluid' %>
+  <% if current_course.image.to_s %>
+    <%= image_tag @course.image.to_s, class: 'img-fluid' %>
   <% end %>
   <br />
   <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
