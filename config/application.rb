@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.assets.initialize_on_precompile = false
+
 module Flixter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -21,8 +23,6 @@ module Flixter
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .woff2 .ttf )
-
-    config.assets.initialize_on_precompile = false
 
   end
 end
