@@ -63,7 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bundler', '~> 2.0.1'
 gem 'rack-timeout', '0.3.2'
-gem 'aws-sdk-s3'
+# gem 'aws-sdk-s3'
 
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.11.1'
