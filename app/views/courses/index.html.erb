@@ -6,7 +6,7 @@
 
   <% @courses.each do |course| %>
     <h2 class="text-center">
-      <%= link_to course.title, course_path(course) %>
+      <%= link_to course.title, course_path(course), class: "courses-title" %>
     </h2>
     <br />
     <% if course.image.url %>

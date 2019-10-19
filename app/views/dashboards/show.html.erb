@@ -4,7 +4,7 @@
   <h1>What I'm Learning</h1>
   <% current_user.enrolled_courses.each do |course| %>
     <h3 class="text-center">
-      <%= course.title, course_path(course) %>
+      <%= course.title, course_path(course), class: "courses-title" %>
     </h3>
     <br />
     <%= image_tag course.image.url, class: 'img-fluid' %>
@@ -24,7 +24,7 @@
   <h1>What I'm Teaching</h1>
   <% current_user.courses.each do |course| %>
     <h3 class="text-center">
-      <%= link_to course.title, course_path(course) %>
+      <%= link_to course.title, course_path(course), class: "courses-title" %>
     </h3>
     <br />
     <%= image_tag course.image.url, class: 'img-fluid' %>
