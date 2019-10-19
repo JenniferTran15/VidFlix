@@ -285,6 +285,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-s3
   bootsnap (>= 1.1.0)
   bootstrap (= 4.0.0.alpha6)
   bundler (~> 2.0.1)
