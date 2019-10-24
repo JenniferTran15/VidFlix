@@ -21,7 +21,7 @@ module Flixter
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .woff2 .ttf )
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
 
   end
 end
