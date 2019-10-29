@@ -1,0 +1,25 @@
+current directory: /vagrant/src/flixter/vendor/bundle/ruby/2.5.0/gems/byebug-11.0.1/ext/byebug
+/home/vagrant/.rbenv/versions/2.5.3/bin/ruby -I /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191029-7411-1j6wrp3.rb extconf.rb
+creating Makefile
+
+current directory: /vagrant/src/flixter/vendor/bundle/ruby/2.5.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+make: Warning: File `Makefile' has modification time 43 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /vagrant/src/flixter/vendor/bundle/ruby/2.5.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+make: Warning: File `Makefile' has modification time 43 s in the future
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+current directory: /vagrant/src/flixter/vendor/bundle/ruby/2.5.0/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+make: Warning: File `Makefile' has modification time 42 s in the future
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20191029-7411-tdckqq/byebug
+make: warning:  Clock skew detected.  Your build may be incomplete.
