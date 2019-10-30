@@ -28,6 +28,7 @@
               <li class="nav-item">
                 <%= link_to 'My Dashboard', dashboard_path, class: 'nav-link' %>
               </li>
+              <br />
               <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li class="nav-item"><%= link_to 'Sign in', new_user_session_path %></li>
